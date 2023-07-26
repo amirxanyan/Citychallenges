@@ -1,10 +1,19 @@
-import { Text, View } from "react-native";
+import React from 'react';
+import Login from './components/login';
+import Artash_lang from "./components/Artash_lang"
 
+import Language from './components/Language';
 
-export default function App() {
+const App = () => {
+
   return (
-    <View>
-      <Text>New Project</Text>
-    </View>
+    <>
+      
+      <Artash_lang />
+    </>
   )
+
+
 }
+
+export default App;
