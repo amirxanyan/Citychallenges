@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 import { View, Text, TextInput, StyleSheet, ImageBackground, Image, TouchableWithoutFeedback } from 'react-native';
 import Hide from '../assets/images/hidepassword';
 
 const Login = () => {
+  const navigation = useNavigation();
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [password, setPassword] = useState('');
   const [imageOverlayPosition, setImageOverlayPosition] = useState(1);
@@ -27,8 +29,7 @@ const Login = () => {
   return (
     <ImageBackground
       source={require('../assets/images/fone.png')}
-      style={styles.backgroundImage}
-    >
+      style={styles.backgroundImage} >
 
 
       <View style={styles.wrapper}>
@@ -79,10 +80,13 @@ const Login = () => {
             source={require('../assets/images/googleLogo.png')}
             style={styles.logo}
           />
+
           <Image
             source={require('../assets/images/fbLogo.png')}
+            
             style={styles.logo}
           />
+
           <Image
             source={require('../assets/images/inLogo.png')}
             style={styles.logo}

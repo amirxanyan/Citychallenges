@@ -1,50 +1,92 @@
+import React from 'react';
+import { View, Text, StyleSheet, ImageBackground, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import { Image, Text, View, ImageBackground, StyleSheet } from "react-native";
+const Language = () => {
+    const navigation = useNavigation();
+    const handleLanguageSelection = (language) => {
+        console.log(`Selected language: ${language}`);
+    };
 
-export default function Language() {
-  return (
-    <View style={styles.container}>
-      <ImageBackground source={require('../assets/images/fone.png')} resizeMode="cover" style={styles.image}>
-        <Image style={styles.tinyLogo} source={require('../assets/images/lang.png')} />
+    return (
+        <ImageBackground source={require('../assets/images/fone.png')} style={styles.backgroundImage} >
+            <View style={styles.container}>
+                <Image
+                    source={require('../assets/images/lang.png')}
+                    style={styles.imageOverlay}
+                />
+                <TouchableOpacity onPress={() => navigation.navigate('LoginType')}>
+                    <View style={styles.langstyle}>
+                    <Image style={styles.flags} source={require('../assets/images/eng.png')} ></Image>
+                        <Text style={styles.buttonText}>English</Text>
+                    </View>
+                </TouchableOpacity>
 
-        <View style={styles.langs}>
-          
-          <Text style={styles.languages}>Englih</Text>
-        </View>
-        <View style={styles.langs}>
-          
-          <Text style={styles.languages} >Armenian</Text>
-        </View>
-        <View style={styles.langs}>
-          
-          <Text style={styles.languages}>Russian</Text>
-        </View>
-      </ImageBackground>
-    </View>
-  )
-}
+                <TouchableOpacity onPress={() => handleLanguageSelection('Armenian')}>
+                    <View style={styles.langstyle}>
+                        <Image style={styles.flags} source={require('../assets/images/arm.png')} ></Image>
+                        <Text style={styles.buttonText}>Հայերեն</Text>
+                    </View>
+                </TouchableOpacity>
+
+
+
+                <TouchableOpacity onPress={() => handleLanguageSelection('Russian')}>
+                    <View style={styles.langstyle}>
+                    <Image style={styles.flags} source={require('../assets/images/rus.png')} ></Image>
+                        <Text style={styles.buttonText}>Русский</Text>
+                    </View>
+                </TouchableOpacity>
+
+            </View>
+        </ImageBackground>
+    );
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-  },
-  image: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  langs: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundImage: {
+        flex: 1,
+        resizeMode: 'cover',
+    },
+    container: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 
-    borderColor: '#DADADA',
-    borderRadius: 10,
+    langstyle: {
+        backgroundColor: '#a5edfa',
+        flexDirection: "row",        
+        fontFamily: 'Roboto',
+        fontSize: 18,
+        fontWeight: '400',
+        lineHeight: 21,
+        letterSpacing: 0.02,        
+        width: 340,
+        height: 80,
+        marginTop: 20,        
+        alignItems: 'center',
+        borderRadius: 30,
+        elevation: 10,
+        
+        
+        touchable: {
+            overflow: 'hidden',
+        },
+        touchablePressed: {
+            transform: [{ scale: 2.5 }],
+        },
 
-  },
-  languages: {
-    color: "black",
-    fontFamily: "Roboto",
-    fontSize: 18,
-  }
+    },
+    flags:{
+        marginLeft: 15,
+    },
+    buttonText: {
+        color: 'black',
+        fontSize: 18,
+        marginLeft: 15,
+    },
+
+ 
 });
+
+export default Language;
