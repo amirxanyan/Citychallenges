@@ -2,12 +2,11 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-
-import {HomeScreen} from './screens/HomeScreen';
-import {DoneScreen} from './screens/DoneScreen';
-import {FavoriteScreen} from './screens/FavoriteScreen';
-import {AddScreen} from './screens/AddScreen';
-import {SettingsScreen} from './screens/SetingsScreen';
+import HomeScreen from './screens/HomeScreen';
+import DoneScreen from './screens/DoneScreen';
+import FavoriteScreen from './screens/FavoriteScreen';
+import AddScreen from './screens/AddScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
 
 
