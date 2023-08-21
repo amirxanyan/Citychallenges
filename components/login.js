@@ -1,27 +1,51 @@
-import React, { useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
-
-import { View, Text, TextInput, StyleSheet, ImageBackground, Image, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, TextInput, StyleSheet, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import Hide from '../assets/images/hidepassword';
+import LoginSVG from '../assets/images/loginSVG.svg';
+import GoogleSVG from '../assets/svgs/google.svg';
+import FacebookSVG from '../assets/svgs/facebook.svg';
+import Linkedin from '../assets/svgs/linkedin.svg';
+import { useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react';
+import axios from 'axios';
+
+
 
 const Login = () => {
   const navigation = useNavigation();
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [password, setPassword] = useState('');
+  
   const [imageOverlayPosition, setImageOverlayPosition] = useState(1);
-
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
   const handleLogin = () => {
-    console.log('Login button pressed');
-  };
+    // Создаем объект данных для отправки на сервер
+    const userData = {
+      email: email,
+      password: password,
+    };
+
+    // Отправляем POST-запрос на сервер
+    axios.post('http://localhost:4000/users/login', userData)
+      .then((response) => {
+        // Обработка успешного ответа от сервера
+        if (response.status === 200) {
+          // Действия после успешной регистрации
+          navigation.navigate('MyTabs');
+        }
+      })
+      .catch((error) => {
+        // Обработка ошибок при запросе
+        console.error('sxal login', error);
+      })}
+
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
-
   const handleNameSurnamePress = () => {
     setImageOverlayPosition(-200);
   };
-
   const handleNameSurnamePressOut = () => {
     setImageOverlayPosition(1);
   };
@@ -31,22 +55,21 @@ const Login = () => {
       source={require('../assets/images/fone.png')}
       style={styles.backgroundImage} >
 
-
       <View style={styles.wrapper}>
-        <Image
-          source={require('../assets/images/image72.png')}
-
-        />
         <View style={styles.form}>
-          <Text style={styles.text}>Log In</Text>
-
+          <LoginSVG height={300} width={300} />
+          
+          <Text style={{ fontFamily: 'LilitaOne-Regular', fontSize: 50, fontWeight: '400', color: '#333' }}>
+            
+            Log In
+            
+          </Text>
           <TextInput
             style={styles.input}
-            placeholder="Name Surname"
-            onFocus={handleNameSurnamePress}
-            onEndEditing={handleNameSurnamePressOut}
+            placeholder="Email"   
+            value={email}
+            onChangeText={(text) => setEmail(text)}
           />
-
           <View style={styles.passwordInputContainer}>
             <TextInput
               style={styles.passwordInput}
@@ -54,50 +77,50 @@ const Login = () => {
               secureTextEntry={!passwordVisible}
               value={password}
               onChangeText={(text) => setPassword(text)}
-              onFocus={handleNameSurnamePress}
-              onEndEditing={handleNameSurnamePressOut}
-
             />
-            <TouchableWithoutFeedback onPress={togglePasswordVisibility}>
+            <TouchableOpacity onPress={togglePasswordVisibility}>
               <View style={styles.togglePasswordButton}>
                 <Hide style={styles.togglePasswordButtonText} />
               </View>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
+          </View>
+          <View>
+            <TouchableOpacity onPress={() => { }} style={{ textAlign: 'right', paddingLeft: 200, marginBottom: 15 }}>
+              <Text style={{ color: '#0165FF', fontWeight: 'bold' }}>
+                Forgot Verification code
+              </Text>
+            </TouchableOpacity>
           </View>
 
-          <TouchableWithoutFeedback onPress={handleLogin}>
+
+          <TouchableOpacity onPress={handleLogin}>
             <View style={styles.loginButton}>
-              <Text style={styles.buttonText}>Login</Text>
+              <Text style={styles.buttonText}>Log In</Text>
             </View>
-
-          </TouchableWithoutFeedback>
+          </TouchableOpacity>
         </View>
-
         <Text style={styles.or}>Or</Text>
-
-        <View style={styles.logoVrapper}>
-          <Image
-            source={require('../assets/images/googleLogo.png')}
-            style={styles.logo}
-          />
-
-          <Image
-            source={require('../assets/images/fbLogo.png')}
-            
-            style={styles.logo}
-          />
-
-          <Image
-            source={require('../assets/images/inLogo.png')}
-            style={styles.logo}
-          />
-        </View>
-        <View >
-          <Text>Don’t have an account?</Text>
-          <Text style={{ color: "red" }}> TO DO nav sign up</Text>
-        </View>
       </View>
+      <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+        <TouchableOpacity>
+          <GoogleSVG height={30} width={30} />
+        </TouchableOpacity>
+        <TouchableOpacity style={{ marginLeft: 26, marginRight: 26 }}>
+          <FacebookSVG height={30} width={30} />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Linkedin height={30} width={30} />
+        </TouchableOpacity>
 
+      </View>
+      <View style={{ flexDirection: 'row', marginTop: 30 }}>
+        <Text style={{ color: '#000', fontWeight: 400, fontSize: 14 }}>
+          Don’t have an account?
+        </Text>
+        <TouchableOpacity style={{ marginLeft: 10 }} >
+          <Text style={{ color: '#0165FF', fontWeight: 700, fontSize: 14 }}>Sign Up</Text>
+        </TouchableOpacity>
+      </View>
     </ImageBackground>
   );
 };
@@ -109,6 +132,9 @@ const styles = StyleSheet.create({
   },
   or: {
     margin: 20,
+    color: '#000',
+    fontWeight: '400',
+    fontSize: 18,
 
   },
   logoVrapper: {
@@ -128,6 +154,7 @@ const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
     resizeMode: 'cover',
+    alignItems: 'center',
   },
 
   form: {
@@ -185,7 +212,7 @@ const styles = StyleSheet.create({
   loginButton: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: '#2196F3',
+    backgroundColor: '#0165FF',
     width: 350,
     height: 50,
     borderRadius: 15,

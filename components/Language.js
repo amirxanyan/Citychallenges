@@ -11,29 +11,24 @@ const Language = () => {
     return (
         <ImageBackground source={require('../assets/images/fone.png')} style={styles.backgroundImage} >
             <View style={styles.container}>
-                <Image
-                    source={require('../assets/images/lang.png')}
-                    style={styles.imageOverlay}
-                />
+                <Image source={require('../assets/images/lang.png')}  />
                 <TouchableOpacity onPress={() => navigation.navigate('LoginType')}>
                     <View style={styles.langstyle}>
-                    <Image style={styles.flags} source={require('../assets/images/eng.png')} ></Image>
+                    <Image style={styles.flags} source={require('../assets/images/eng.png')} />
                         <Text style={styles.buttonText}>English</Text>
                     </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => handleLanguageSelection('Armenian')}>
                     <View style={styles.langstyle}>
-                        <Image style={styles.flags} source={require('../assets/images/arm.png')} ></Image>
+                        <Image style={styles.flags} source={require('../assets/images/arm.png')} />
                         <Text style={styles.buttonText}>Հայերեն</Text>
                     </View>
                 </TouchableOpacity>
 
-
-
                 <TouchableOpacity onPress={() => handleLanguageSelection('Russian')}>
                     <View style={styles.langstyle}>
-                    <Image style={styles.flags} source={require('../assets/images/rus.png')} ></Image>
+                    <Image style={styles.flags} source={require('../assets/images/rus.png')} />
                         <Text style={styles.buttonText}>Русский</Text>
                     </View>
                 </TouchableOpacity>
@@ -45,8 +40,7 @@ const Language = () => {
 
 const styles = StyleSheet.create({
     backgroundImage: {
-        flex: 1,
-        resizeMode: 'cover',
+        flex: 1,       
     },
     container: {
         justifyContent: 'center',
@@ -54,28 +48,13 @@ const styles = StyleSheet.create({
     },
 
     langstyle: {
-        backgroundColor: '#a5edfa',
-        flexDirection: "row",        
-        fontFamily: 'Roboto',
-        fontSize: 18,
-        fontWeight: '400',
-        lineHeight: 21,
-        letterSpacing: 0.02,        
+        backgroundColor: '#69d7f0',
+        flexDirection: "row",       
         width: 340,
         height: 80,
         marginTop: 20,        
         alignItems: 'center',
         borderRadius: 30,
-        elevation: 10,
-        
-        
-        touchable: {
-            overflow: 'hidden',
-        },
-        touchablePressed: {
-            transform: [{ scale: 2.5 }],
-        },
-
     },
     flags:{
         marginLeft: 15,
