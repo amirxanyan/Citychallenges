@@ -84,3 +84,5 @@ To learn more about React Native, take a look at the following resources:
 !!! npm install @react-navigation/material-bottom-tabs react-native-paper react-native-vector-icons
 !!! npm install react-native-screens react-native-safe-area-context
 
+!!! rest,  mysql 
+
