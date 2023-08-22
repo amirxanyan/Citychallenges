@@ -3,9 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Language from './components/Language';
 import LoginType from './components/LoginType';
-import Login from './components/Login';
+import Login from './components/login';
 import MyTabs from './components/MyTabs';
-import EventDescription from './components/EventDescription';
+// import EventDescription from './components/EventDescription';
 
 
 const Stack = createStackNavigator();
