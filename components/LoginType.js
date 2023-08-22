@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, ImageBackground, Image, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import LinearGradient from 'react-native-linear-gradient'
+
 
 const LoginType = () => {
     const navigation = useNavigation();
@@ -25,7 +25,7 @@ const LoginType = () => {
 
             <TouchableOpacity onPress={() => handleLoginType('legalPerson')} style={styles.btn}>
 
-                    <Text style={styles.buttonText}>Legal Person</Text>
+                <Text style={styles.buttonText}>Legal Person</Text>
                 
 
 

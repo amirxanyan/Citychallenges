@@ -4,14 +4,13 @@ import LoginSVG from '../assets/images/loginSVG.svg';
 import GoogleSVG from '../assets/svgs/google.svg';
 import FacebookSVG from '../assets/svgs/facebook.svg';
 import Linkedin from '../assets/svgs/linkedin.svg';
-import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import axios from 'axios';
 
 
 
-const Login = () => {
-  const navigation = useNavigation();
+function Login ({navigation}) {
+  
   const [passwordVisible, setPasswordVisible] = useState(false);
   
   const [imageOverlayPosition, setImageOverlayPosition] = useState(1);
@@ -49,6 +48,9 @@ const Login = () => {
   const handleNameSurnamePressOut = () => {
     setImageOverlayPosition(1);
   };
+  const signUpScreen = ()=>{
+    navigation.navigate('SignUpScreen')
+  }
 
   return (
     <ImageBackground
@@ -113,12 +115,13 @@ const Login = () => {
         </TouchableOpacity>
 
       </View>
+      
       <View style={{ flexDirection: 'row', marginTop: 30 }}>
         <Text style={{ color: '#000', fontWeight: 400, fontSize: 14 }}>
           Don’t have an account?
         </Text>
         <TouchableOpacity style={{ marginLeft: 10 }} >
-          <Text style={{ color: '#0165FF', fontWeight: 700, fontSize: 14 }}>Sign Up</Text>
+          <Text onPress={signUpScreen} style={{ color: '#0165FF', fontWeight: 700, fontSize: 14 }}>Sign Up</Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>

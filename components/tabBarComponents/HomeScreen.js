@@ -12,12 +12,9 @@ const Stack = createStackNavigator();
 function HomeScreen() { 
     return (
         <Stack.Navigator>
-           
-                <Stack.Screen name="HomeScreenMain" component={HomeScreenMain} options={{ headerShown: false }} />
-
-                <Stack.Screen name="HomeScreenFilter" component={HomeScreenFilter} options={{ headerShown: false }} />
+               <Stack.Screen name="HomeScreenFilter" component={HomeScreenFilter} options={{ headerShown: false }} />
                 <Stack.Screen name="EventDescription" component={EventDescription} options={{ headerShown: false }} />
-
+                <Stack.Screen name="HomeScreenMain" component={HomeScreenMain} options={{ headerShown: false }} />
         </Stack.Navigator>
 
     );
