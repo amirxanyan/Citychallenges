@@ -5,6 +5,7 @@ import Language from './components/Language';
 import LoginType from './components/LoginType';
 import Login from './components/login';
 import MyTabs from './components/MyTabs';
+import SplashScreen from './components/SplashScreen';
 // import EventDescription from './components/EventDescription';
 
 
@@ -14,8 +15,8 @@ function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-     
-      
+
+        <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
         <Stack.Screen name="Language" component={Language} options={{ headerShown: false }} />
         <Stack.Screen name="LoginType" component={LoginType} options={{ headerShown: false }} />
