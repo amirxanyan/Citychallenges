@@ -5,21 +5,26 @@ import Login from './components/login';
 import Language from './components/Language';
 import LoginType from './components/LoginType';
 import MyTabs from './components/MyTabs';
-import AddScreen from './components/tabBarComponents/AddScreen';
 import SignUpScreen from './components/SignUpScreen';
-
+import AddScreen from './components/tabBarComponents/AddScreen';
+import SplashScreen from './components/SplashScreen';
+// import EventDescription from './components/EventDescription';
 
 
 const Stack = createStackNavigator();
 
 function Navigation() {
   return (
-    <NavigationContainer>
+    <NavigationContainer >
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name='SignUpScreen' component={SignUpScreen} options={{headerShown: false }}/>
 
+        <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
         <Stack.Screen name="AddScreen" component={AddScreen} options={{ headerShown: false }} />
+        <Stack.Screen name='SignUpScreen' component={SignUpScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+
+
+
         <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }} />
         <Stack.Screen name="LoginType" component={LoginType} options={{ headerShown: false }} />
 
