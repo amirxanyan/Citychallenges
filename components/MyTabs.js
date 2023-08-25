@@ -21,13 +21,15 @@ function MyTabs() {
         <Tab.Navigator
             screenOptions={{
                 headerShown: false,
-                tabBarShowLabel: false, 
-                tabBarInactiveBackgroundColor: "#005693", 
-                tabBarActiveBackgroundColor: 'red', 
-                tabBarStyle: {  height:75, 
-                                position: "absolute", 
-                                borderBottomEndRadius: 50}, 
-               
+                tabBarShowLabel: false,
+                tabBarInactiveBackgroundColor: "#005693",
+                tabBarActiveBackgroundColor: 'red',
+                tabBarStyle: {
+                    height: 75,
+                    position: "absolute",
+                    borderBottomEndRadius: 50
+                },
+
             }}
         >
             <Tab.Screen
@@ -37,7 +39,7 @@ function MyTabs() {
                     tabBarIcon: ({ color, size }) => (
                         <HomeSVG />
                     )
-                   
+
                 }}
             />
 
