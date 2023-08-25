@@ -1,11 +1,11 @@
 [
     {
-        "merged": "com.citychallenges.app-merged_res-31:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.citychallenges.app-main-33:/mipmap-hdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "com.citychallenges.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "com.citychallenges.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.citychallenges.app-merged_res-31:/drawable-hdpi_launch_screen.png.flat",
+        "source": "com.citychallenges.app-main-33:/drawable-hdpi/launch_screen.png"
     },
     {
         "merged": "com.citychallenges.app-merged_res-31:/mipmap-xhdpi_ic_launcher.png.flat",
@@ -16,16 +16,12 @@
         "source": "com.citychallenges.app-main-33:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.citychallenges.app-merged_res-31:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.citychallenges.app-main-33:/mipmap-mdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "com.citychallenges.app-merged_res-31:/drawable_rn_edit_text_material.xml.flat",
         "source": "com.citychallenges.app-main-33:/drawable/rn_edit_text_material.xml"
     },
     {
-        "merged": "com.citychallenges.app-merged_res-31:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.citychallenges.app-main-33:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.citychallenges.app-merged_res-31:/drawable-xxxhdpi_launch_screen.png.flat",
+        "source": "com.citychallenges.app-main-33:/drawable-xxxhdpi/launch_screen.png"
     },
     {
         "merged": "com.citychallenges.app-merged_res-31:/mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -34,6 +30,26 @@
     {
         "merged": "com.citychallenges.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "com.citychallenges.app-main-33:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.citychallenges.app-merged_res-31:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.citychallenges.app-main-33:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.citychallenges.app-merged_res-31:/drawable-xxhdpi_launch_screen.png.flat",
+        "source": "com.citychallenges.app-main-33:/drawable-xxhdpi/launch_screen.png"
+    },
+    {
+        "merged": "com.citychallenges.app-merged_res-31:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.citychallenges.app-main-33:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.citychallenges.app-merged_res-31:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.citychallenges.app-main-33:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.citychallenges.app-merged_res-31:/layout_launch_screen.xml.flat",
+        "source": "com.citychallenges.app-main-33:/layout/launch_screen.xml"
     },
     {
         "merged": "com.citychallenges.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.png.flat",

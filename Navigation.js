@@ -17,15 +17,15 @@ function Navigation() {
   return (
     <NavigationContainer >
       <Stack.Navigator>
-
-        <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }} />
+        {/* <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} /> */}
         <Stack.Screen name="AddScreen" component={AddScreen} options={{ headerShown: false }} />
         <Stack.Screen name='SignUpScreen' component={SignUpScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
 
 
 
-        <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }} />
+
         <Stack.Screen name="LoginType" component={LoginType} options={{ headerShown: false }} />
 
         <Stack.Screen name="Language" component={Language} options={{ headerShown: false }} />
